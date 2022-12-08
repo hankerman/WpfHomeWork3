@@ -1,0 +1,124 @@
+﻿<Window x:Class="WpfHomeWork3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfHomeWork3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="800">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock FontSize="25"
+                           HorizontalAlignment="Center">
+                    <Run FontWeight="Bold">Анкета</Run>
+                    <LineBreak/>
+                    Программиста
+                </TextBlock>
+                <GroupBox Header="ФИО">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Фамилия"
+                                   Margin="5"/>
+                        <TextBlock Text="Имя"
+                                   Grid.Row="1"
+                                   Margin="5"/>
+                        <TextBlock Text="Отчество"
+                                   Grid.Row="2"
+                                   Margin="5"/>
+                        <TextBox Grid.Row="0"
+                                 Grid.Column="1"
+                                 Margin="5"/>
+                        <TextBox Grid.Row="1"
+                                 Grid.Column="1"
+                                 Margin="5"/>
+                        <TextBox Grid.Row="2"
+                                 Grid.Column="1"
+                                 Margin="5"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Выберите язык программирования, который знаете">
+                    <StackPanel>
+                        <CheckBox Content="C#"/>
+                        <CheckBox Content="C++"/>
+                        <CheckBox Content="Phton"/>
+                        <CheckBox Content="JavaScript"/>
+                        <Expander Header="Дополнительные">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <ListBox/>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Button Content="Добавить"
+                                            FontSize="18"/>
+                                    <Button Grid.Row="1"
+                                            Content="Удалить выделенное"
+                                            FontSize="18"/>
+                                </Grid>
+                            </Grid>
+                        </Expander>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="Расскажи о себе">
+                    <TextBox Height="70"
+                                     MaxLength="500"
+                                     AcceptsReturn="True"
+                                     VerticalScrollBarVisibility="Auto"
+                                     TextWrapping="Wrap"/>
+                </GroupBox>
+                <GroupBox Header="Выберите дату рождения">
+                    <DatePicker/>
+                </GroupBox>
+                <GroupBox Header="Уровень английского">
+                    <StackPanel>
+                        <RadioButton Content="A1"/>
+                        <RadioButton Content="A2"/>
+                        <RadioButton Content="B1"/>
+                        <RadioButton Content="B2"/>
+                        <RadioButton Content="C1"/>
+                        <RadioButton Content="C2"/>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="Выберите ОС">
+                    <WrapPanel>
+                        <ToggleButton>
+                            <Image Source="/Resources/icons8-windows-10-48.png"
+                                   Width="50"/>
+                        </ToggleButton>
+                        <ToggleButton>
+                            <Image Source="/Resources/icons8-ос-линукс-48.png"
+                                   Width="50"/>
+                        </ToggleButton>
+                        <ToggleButton>
+                            <Image Source="/Resources/icons8-finder-48.png"
+                                   Width="50"/>
+                        </ToggleButton>
+                    </WrapPanel>
+                </GroupBox>
+                <GroupBox Header="Заинтересованость в программирование">
+                    <Slider Minimum="0"
+                            Maximum="100"
+                            TickPlacement ="BottomRight"
+                            TickFrequency="5"
+                            Width="500"/>
+                </GroupBox>
+                <Button Content="Пройти Анкетирование"
+                        FontSize="20"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
